@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/plugins/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>OWP - Firebase Login</title>
+  </head>
+  <body>
+    <div >        
+        <div class="container-fluid" id="login">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-xl-12">
+                        <form id="login-form" class="form custom-input" action="#">
+                            <h3 class="text-center " id="as4">Login</h3>
+                            <div class="form-group custom-input" id="as2">
+                                <label for="email">Username:</label><br>
+                                <input type="email" name="email" id="email" class="form-control">
+                                <div id="nema-emaila"></div>
+                            </div>
+                            <div class="form-group custom-input" id="a3">
+                                <label for="password">Password:</label><br>
+                                <input type="password" name="password" id="password" class="form-control">
+                                <div id="error-message" ></div>
+                                <div id="nema-lozinke" ></div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn custom-input" id="btnl" onclick="Login()">Prijavi se</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>  
+    <script src="js/firebasec.js"></script>
+    <script src="js/auth.js"></script>  
+
+  </body>
+</html>

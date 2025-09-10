@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="assets/plugins/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Exo+2:wght@200;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/0e06a7cc03.js" crossorigin="anonymous"></script>
+  <title>VUV-Knjižnica</title>
+</head>
+<body>
+
+  <header class="container-fluid topnav">
+    <div class="row"></div>
+    <nav class="navbar navbar-expand-lg navbar-custom">        
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link home" href="index.html"><i class="fa-solid fa-house house"></i> <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Statistika.html">Statistika</a>
+          </li>
+        </ul>
+      </div>
+      <div class="ml-auto">
+        <a class="nav-link" href="#" onclick="SignOut()">Odjava se</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="container">
+  <div class="container" id="logo">      
+  </div>
+
+  <!-- Navbar for the first section -->
+  <nav id="nav12" class="container">
+    <div class="nav nav-tabs" id="nav-tab1" role="tablist">
+        <a class="nav-link active a" id="nav-home-tab1" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true" onclick="prikaziKnjige()">Lista posuđenih knjiga</a>
+        <a class="nav-link a" id="nav-profile-tab1" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="b()">Lista korisnika sa brojem posuđivanja</a>
+        <a class="nav-link a" id="nav-tab3-tab1" data-toggle="tab" href="#nav-tab3" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="C()">Top 10 knjiga</a>
+        <a class="nav-link a" id="nav-tab4-tab1" data-toggle="tab" data-target="#nav-tab4" aria-controls="nav-profile" aria-selected="false" onclick="d()">Top 10 korisnika</a>
+    </div>     
+    <div class="tab-content" id="nav-tabContent">
+
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab1">
+
+        <div class="container-fluid" id="c21">
+          <table class="table" id="bookTable123">
+            <thead id="th123">
+              <tr>
+                <th scope="col" id="jedan"></th>
+                <th scope="col">R.B</th>
+                <th scope="col">Slika</th>
+                <th scope="col">Naziv</th>
+                <th scope="col">Autori</th>
+                <th scope="col">Broj posuđivanja</th>
+                <th scope="col" id="dva"></th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab1">
+
+        <div class="container-fluid" id="c22">
+          <table class="table" id="korisnikTable12">
+            <thead id="th234">
+              <tr>
+                <th id="jedan"></th>
+                <th scope="col">R.B</th>
+                <th scope="col">Ime</th>
+                <th scope="col">Prezime</th>
+                <th scope="col">Broj članske iskaznice</th>
+                <th scope="col">Broj posuđivanja</th>
+                <th id="dva"></th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab1">
+        <div class="container-fluid" id="c23">
+          <table class="table" id="bookTable456">
+            <thead id="th456">
+              <tr>
+                <th id="jedan"></th>
+                <th scope="col">R.B</th>
+                <th scope="col">Slika</th>
+                <th scope="col">Naziv</th>
+                <th scope="col">Autori</th>
+                <th scope="col">Broj posuđivanja</th>
+                <th id="dva"></th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="nav-tab4" role="tabpanel" aria-labelledby="nav-tab4-tab1">
+        <div class="container-fluid" id="c24">
+          <table class="table" id="userTable789">
+            <thead id="th789">
+              <tr>
+                <th id="jedan"></th>
+                <th scope="col">R.B</th>
+                <th scope="col">Ime</th>
+                <th scope="col">Prezime</th>
+                <th scope="col">Broj članske iskaznice</th>
+                <th scope="col">Broj posuđivanja</th>
+                <th id="dva"></th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  
+</nav>
+
+
+  
+<footer id="foot-custom" class="container">
+  <h3>Anamarija Bošnjak</h3>
+  <h3>Godina 2023</h3>
+</footer>    
+
+
+</body>
+</html>
+
+
+
+
+    
+    <!--Ućitavanje-->
+    <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+       
+
+
+    <script src="js/firebasec.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/preusmjeravanje.js"></script>
+    <script src="js/odjava.js"></script>
+    <script src="js/statistika.js"></script>
+  </body>
+</html>

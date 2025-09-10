@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/plugins/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Exo+2:wght@200;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0e06a7cc03.js" crossorigin="anonymous"></script>
+    <title>VUV-Knjižnica</title>
+  </head>
+  <body>  
+  
+    <div class="container-fluid topnav">
+      <div class="row"></div>
+      <nav class="navbar navbar-expand-lg navbar-custom">        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link home" href="index.html"><i class="fa-solid fa-house house"></i> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Statistika.html">Statistika</a>
+            </li>           
+          </ul>
+        </div>
+        <div class="ml-auto topnav">          
+          <a class="nav-link" id="as1" onclick="SignOut()">Odjavi se</a>
+      </div>      
+      </nav>
+    </div> 
+
+
+    <div class="d-flex justify-content-center">
+        <div class="display-3 text-center" id="h1"><img src="img/Korisnik.png"></div>
+        <h1 class="display-3 text-center" id="h2" style="margin-top: 205px;"><b id="h22"></b></h1>
+    </div>
+    
+<div id="svi-korisnici" class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+
+            <h5 class="card-title" id="ime-prezime"></h5>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="accordion col-7 offset-md-1" id="accordionExample" style="margin: 0px;">
+                        <div>
+                            <p id="p-OIB"></p>
+                            <p id="p-BrojClanskeIskaznice"></p>
+                            <p id="p-datumUclanjenja"></p>
+                            <p id="p-datumPrekidaClanstva"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                    data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    Povijest posuđivanja
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p class="card-text" id="povijest"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-footer text-muted">
+            <div class="row" id="rowdiv">
+                <div class="col-6"><button class="btn" id="btnUredi"><i class="fa-solid fa-pen" style="color: #994f1d;"></i></button></div>
+                <div class="col-6"><button class="btn" id="btnObrisi"><i class="fa-solid fa-eraser" style="color: #994f1d;"></i></button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    
+
+   <!--Modali-->
+    
+
+  <!--Anžuriranje korisnika-->
+
+<div class="modal fade" id="modalAnzuriranjeKorisnik" tabindex="-1" aria-labelledby="ModalAnzurirajLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content" id="modal-li1">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="ModalAnzurirajLabel"><b>Uredi</b></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form id="addDataForm">
+                      <div class="form-group">
+                          <label for="naziv-id1" class="col-form-label">Ime</label>
+                          <input type="text" class="form-control" id="ime-id" placeholder="Unesite naziv">
+                      </div>
+                      <div class="form-group">
+                          <label for="autor-id1" class="col-form-label">Prezime</label>
+                          <input type="text" class="form-control" id="prezime-id" placeholder="Unesite autora">
+                      </div>
+                      
+                      <div class="form-group">
+                          <label for="ISBN-id1" class="col-form-label">OIB</label>
+                          <input type="text" class="form-control" id="oib-id" placeholder="Unesite isbn">
+                      </div>
+                      <div class="form-group">
+                          <label for="Broj-id1" class="col-form-label">Broj članske iskaznice</label>
+                          <input type="text" class="form-control" id="broj_clanske_iskaznice-id" placeholder="Unesite broj stranica">
+                      </div>
+                      <div class="form-group">
+                        <label for="Broj-id1" class="col-form-label">Datum učlanjena</label>
+                        <input type="text" class="form-control" id="datum_uclanjenja-id" placeholder="Unesite broj stranica">
+                    </div>
+                    <div class="form-group">
+                        <label for="Broj-id1" class="col-form-label">Datum prekida članstva</label>
+                        <input type="text" class="form-control" id="datum_isteka_clanstva-id" placeholder="Unesite broj stranica">
+                    </div>
+                      
+                  </form>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <input type="submit" class="btn btn-primary" value="Produži članstvo" id="pc">
+                <input type="submit" class="btn btn-primary" value="Prekini članstvo" id="pk">
+                <input type="submit" class="btn btn-primary" value="Anžuriraj" id="submitBtn-korisnik1">
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!--Bisnaje korisnika-->
+
+  <div class="modal fade" id="ModalObrisi" tabindex="-1" aria-labelledby="ModalObrisiLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-li2">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalObrisiLabel"><b>Obriši</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2>Jeste li sigurni da želite obrisati <p id="ap"></p></h2>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+              <input type="submit" class="btn btn-primary" value="Obriši" id="ObrisiKorisnika">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Prekid članstva-->
+<div class="modal fade" id="ModalObrisi1" tabindex="-1" aria-labelledby="ModalObrisiLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-li2">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalObrisiLabel1"><b>Prekini članstvo</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2>Jeste li sigurni da želite prekinuti članstvo <p id="ap"></p></h2>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+              <input type="submit" class="btn btn-primary" value="Prekini članstv" id="prekinik">
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+
+    <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script> 
+
+    <script src="js/firebasec.js"></script>
+    <script src="js/preusmjeravanje.js"></script>
+    <script src="js/odjava.js"></script>
+    <script src="js/korisnik.js"></script>
+   
+      </body>
+      </html>
+      

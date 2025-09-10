@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/plugins/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Exo+2:wght@200;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/0e06a7cc03.js" crossorigin="anonymous"></script>
+   
+    <title>VUV-Knjižnica</title>
+  </head>
+  <body>  
+  
+    <div class="container-fluid topnav fixed-top">
+      <div class="row"></div>
+      <nav class="navbar navbar-expand-lg navbar-custom d-flex align-items-center">   
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link home" href="index.html"><i class="fa-solid fa-house house"></i> <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="Statistika.html">Statistika</a>
+            </li>
+                        
+          </ul>
+        </div>
+
+        <div class="ml-auto topnav">          
+          <a class="nav-link" id="as1" onclick="SignOut()">Odjavi se</a>
+      </div>
+      
+      </nav>
+    </div>
+   
+
+    
+    <div id="s" >
+      <div class="container" id="logo" >      
+      </div>
+      <nav id="nav1" class="container">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-link active a" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true" onclick="a()">Pretraga knjiga</a>
+          <a class="nav-link a" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Pretraga korisnika</a>
+          <a class="nav-link a" id="nav-tab3-tab" data-toggle="tab" href="#nav-tab3" role="tab" aria-controls="nav-profile" aria-selected="false">Sve knjige</a>
+          <a class="nav-link a" id="nav-tab4-tab" data-toggle="modal" data-target="#modalDodajKorisnika" aria-controls="nav-profile" aria-selected="false">Dodaj novog korisnika</a>         
+                    
+        </div>       
+      </nav>
+
+
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div id="inputs-container" class="container">
+                <input type="text" id="inputs" placeholder="Pretraži po autoru, isbnu, broju stranica, žanru....">
+                <button  class="button"  id="btn1" type="button" onclick="pretraziBazu()">Pretraži</button>
+            </div>
+
+            <div class="container" id="nema-rezultata" style="display: none;">
+              <p>Nema rezultata!</p>
+            </div>
+            <div class="container-fluid" id="c2" style="display: none;">
+              <table class="table" id="bookTable1">
+                <thead id="th2">
+                  <tr>
+                    
+                    <th scope="col">R.B</th>
+                    <th scope="col">Slika</th>
+                    <th scope="col">Naziv</th>
+                    <th scope="col">Autor</th>
+                    <th scope="col">Žanr</th>
+                    <th scope="col">ISBN</th>
+                    <th scope="col">Dostupnost</th>
+                    <th scope="col">Broj stranica</th>
+                    <th scope="col">Posudi/Vrati</th>
+                    <th scope="col">Uredi</th>
+                    <th scope="col">Ukloni</th>                                   
+                  </tr>
+                </thead>
+                <tbody>   
+  
+                </tbody>
+              </table>
+        </div>
+        </div>       
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div id="inputs-container1" class="container">
+              <input type="text" id="inputs1" placeholder="Pretrazi po imenu,prezimenu,oib-u...">
+              <button type="button" id="btn2" onclick="pretraziBazuk()">Pretraži</button>
+          </div>
+          <div class="container" id="nemarezultata1" style="display: none;">
+              <p>Nema rezultata!</p>
+          </div>
+          <div class="container-fluid" id="c3" style="display: none;">
+              <table class="table" id="korisnikTable">
+                  <thead id="th2">
+                      <tr>
+                          <th scope="col">R.B</th>
+                          <th scope="col">OIB</th>
+                          <th scope="col">Ime</th>
+                          <th scope="col">Prezime</th>
+                          <th scope="col">Uredi</th>
+                          <th scope="col">Ukloni</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+      
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      
+        
+        <div class="tab-pane fade" id="nav-tab3" role="tabpanel" aria-labelledby="nav-tab3-tab">      
+          
+          
+          <div class="container-fluid" id="c1">           
+            <table class="table" id="bookTable">
+              <thead id="th1">
+                <tr>
+                  <th scope="col"><button class="button" id="btnDodaj" data-toggle="modal" data-target="#ModalDodaj">
+                    <i class="fas fa-plus-circle fa-lg" style="color: #ffffff;"></i>
+                  </button></th>                  
+                  <th scope="col">R.B</th>
+                    <th scope="col">Slika</th>
+                    <th scope="col">Naziv</th>
+                    <th scope="col">Autor</th>
+                    <th scope="col">Žanr</th>
+                    <th scope="col">ISBN</th>
+                    <th scope="col">Dostupnost</th>
+                    <th scope="col">Broj stranica</th>
+                    <th scope="col">Posudi/Vrati</th>
+                    <th scope="col">Uredi</th>
+                    <th scope="col">Ukloni</th> 
+                  <th scope="col"><div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Filter
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" id="d1" href="#">Dostupne</a>
+                      <a class="dropdown-item" id="d2" href="#">Nedostupne</a>
+                      <a class="dropdown-item" id="d3"  href="#">Sve</a> 
+                    </div>
+                  </div></th>                  
+                </tr>
+              </thead>
+              <tbody>   
+
+              </tbody>
+            </table>
+           </div>
+        </div>
+        
+    </div>
+    
+      
+  </div>
+    <footer>
+      <div id="foot-custom" class="container">
+        <h3>Anamarija Bošnjak</h3>
+        <h3>Godina 2023</h3>
+      </div>
+    </footer>
+   
+    
+  
+
+    <!--Modali-->
+    <!--Dodavanje knjiga-->
+    <div class="modal fade" id="ModalDodaj" tabindex="-1" aria-labelledby="ModalDodajLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content" id="modal-li">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="ModalDodajLabel"><b>Dodaj</b></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form id="addDataForm">
+                      <div class="form-group">
+                          <label for="naziv-id" class="col-form-label">Naziv</label>
+                          <input type="text" class="form-control" id="naziv-id" placeholder="Unesite naziv">
+                      </div>
+                      <div class="form-group">
+                          <label for="autor-id" class="col-form-label">Autori (razdvojeni zarezom)</label>
+                          <input type="text" class="form-control" id="autor-id" placeholder="Unesite autore">
+                      </div>
+                      <div class="form-group">
+                          <label for="zanrovi-id" class="col-form-label">Žanrovi (razdvojeni zarezom)</label>
+                          <input type="text" class="form-control" id="zanrovi-id" placeholder="Unesite žanrove">
+                      </div>
+                      <div class="form-group">
+                          <div class="form-check">
+                              <input type="checkbox" class="form-check-input" id="dostupnost-id">
+                              <label class="form-check-label" id="dostupna">Knjiga je dostupna</label>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="ISBN-id" class="col-form-label">ISBN</label>
+                          <input type="text" class="form-control" id="ISBN-id" placeholder="Unesite ISBN">
+                          <small class="text-muted">Primjeri ispravnih formata: 978-1-4516-7331-9</small>
+                      </div>
+                      <div class="form-group">
+                          <label for="Broj-id" class="col-form-label">Broj stranica</label>
+                          <input type="text" class="form-control" id="Broj-id" placeholder="Unesite broj stranica">
+                      </div>
+                      <div class="form-group">
+                          <label for="opis-id" class="col-form-label">Opis</label>
+                          <textarea class="form-control" id="opis-id" placeholder="Unesite opis"></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="slika-id" class="col-form-label">Slika</label>
+                          <input type="file" class="form-control-file" id="slika-id" >
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                  <button type="button" class="btn btn-primary" id="submitBtn" onclick="DodajNovuKnjigu()">Potvrdi</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+
+  <!--Anžuriranje knjiga-->
+
+<div class="modal fade" id="modalAnzuriranje" tabindex="-1" aria-labelledby="ModalAnzurirajLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content" id="modal-li1">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="ModalAnzurirajLabel"><b>Anžuriraj</b></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form id="addDataForm">
+                      <div class="form-group">
+                          <label for="naziv-id1" class="col-form-label">Naziv</label>
+                          <input type="text" class="form-control" id="naziv-id1" placeholder="Unesite naziv">
+                      </div>
+                      <div class="form-group">
+                          <label for="autor-id1" class="col-form-label">Autor/i</label>
+                          <input type="text" class="form-control" id="autor-id1" placeholder="Unesite autora">
+                      </div>   
+                      <div class="form-group">
+                        <label fro="zanrovi" class="col-form-label">Žanr/ovi</label>
+                        <input type="text" class="form-control" id="zanrovi" placeholder="Unesite autora">
+                      </div>                  
+                      <div class="form-group">
+                          <label for="ISBN-id1" class="col-form-label">ISBN</label>
+                          <input type="text" class="form-control" id="ISBN-id1" placeholder="Unesite isbn">
+                      </div>
+                      <div class="form-group">
+                          <label for="Broj-id1" class="col-form-label">Broj stranica</label>
+                          <input type="text" class="form-control" id="Broj-id1" placeholder="Unesite broj stranica">
+                      </div>
+                      <div class="form-group">
+                          <label for="opis-id1" class="col-form-label">Opis</label>
+                          <textarea class="form-control" id="opis-id1" placeholder="Unesite opis"></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="slika-id1" class="col-form-label">Slika</label>
+                          <input type="file" class="form-control-file" id="slika-id1" accept="image/*">
+                      </div>
+                      <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="dostupnost-id1">
+                            <label class="form-check-label"  id="dostupna1">Knjiga je dostupna</label>
+                        </div>
+                    </div>
+                  </form>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <input type="submit" class="btn btn-primary" value="Anžuriraj" id="submitBtn1">
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!--Bisnaje knjige-->
+
+  <div class="modal fade" id="ModalObrisi" tabindex="-1" aria-labelledby="ModalObrisiLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal-li2">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalObrisiLabel"><b>Obriši</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2>Jeste li sigurni da želite obrisati <p id="ap"></p></h2>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="zatvori">Zatvori</button>
+              <input type="submit" class="btn btn-primary" value="Obriši" id="ObrisiKnjigu">
+            </div>
+        </div>
+    </div>
+</div>
+  <!--Dodaj korisnika-->
+  <!-- Modal za dodavanje korisnika -->
+<div class="modal fade" id="modalDodajKorisnika" tabindex="-1" aria-labelledby="modalDodajKorisnikaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content" id="mod">
+          <div class="modal-header">
+              <h5 class="modal-title" id="modalDodajKorisnikaLabel">Dodaj korisnika</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form id="dodajKorisnikaForm">
+                  <div class="form-group">
+                      <label for="ime-id" class="col-form-label">Ime</label>
+                      <input type="text" class="form-control" id="ime-id" placeholder="Unesite ime">
+                  </div>
+                  <div class="form-group">
+                      <label for="prezime-id" class="col-form-label">Prezime</label>
+                      <input type="text" class="form-control" id="prezime-id" placeholder="Unesite prezime">
+                  </div>
+                  <div class="form-group">
+                      <label for="oib-id" class="col-form-label">OIB</label>
+                      <input type="text" class="form-control" id="oib-id" placeholder="Unesite OIB">
+                  </div>
+                  <div class="form-group">
+                      <label for="broj-iskaznice-id" class="col-form-label">Broj članske iskaznice</label>
+                      <input type="text" class="form-control" id="brojClanskeIskaznice-id" placeholder="Unesite broj članske iskaznice">
+                  </div>
+                  <div class="form-group">
+                      <label for="datum-uclanjenja-id" class="col-form-label">Datum učlanjenja</label>
+                      <input type="text" class="form-control" id="datum-uclanjenja-id" placeholder="Unesite datum učlanjenja">
+                  </div>
+                  <div class="form-group">
+                      <label for="datum-isteka-id" class="col-form-label">Datum isteka članstva</label>
+                      <input type="text" class="form-control" id="datum-isteka-id" placeholder="Unesite datum isteka članstva">
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="zap">Zatvori</button>
+              <button type="button" class="btn btn-primary" onclick="    DodajNovogKorisnika() " id="zap1"
+              ">Spremi</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+    <!-- Modal za posuđivanje-->
+
+<!-- Model posudi knjigu-->
+<div class="modal fade" id="ModalPosudi" tabindex="-1" aria-labelledby="ModalPosudiLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content" id="mPosudi">
+          <div class="modal-header">
+            <p>Posudi knjigu</p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form id="">
+                  <div class="form-group">
+                      <label for="naziv-id8" class="col-form-label">Naziv</label>
+                      <input type="text" class="form-control" id="naziv-id8">
+                  </div>
+                  <div class="form-group">
+                      <label for="datum-id" class="col-form-label">Datum iznajmljivanja</label>
+                      <input type="datetime" class="form-control" id="datum-id">
+                  </div>
+                  <div class="form-group">
+                      <label for="datum-povratka-id" class="col-form-label">Očekivani datum povratka</label>
+                      <input type="datetime" class="form-control" id="datum-povratka-id">
+                  </div>
+                  <div class="form-group">
+                      <label for="oib-dropdown" class="col-form-label">Odaberi OIB korisnika</label>
+                      <div id="oib-dropdown1">
+                          <select class="form-control mr-2 js-example-basic-single" id="oib-dropdown" name="state">
+                          </select>
+                      </div>
+                  </div>
+                  <div class="text-center"> 
+                      <button type="button" class="btn btn-primary" id="submiPosudi">Posudi</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+ <!--Anžuriranje korisnika-->
+
+ <div class="modal fade" id="modalAnzuriranjeKorisnik" tabindex="-1" aria-labelledby="ModalAnzurirajLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content" id="modal-li1">
+          <div class="modal-header">
+              <h5 class="modal-title" id="ModalAnzurirajLabel"><b>Uredi</b></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form id="addDataForm">
+                  <div class="form-group">
+                      <label for="naziv-id1" class="col-form-label">Ime</label>
+                      <input type="text" class="form-control" id="ime-id1" placeholder="Unesite naziv">
+                  </div>
+                  <div class="form-group">
+                      <label for="autor-id1" class="col-form-label">Prezime</label>
+                      <input type="text" class="form-control" id="prezime-id1" placeholder="Unesite autora">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="ISBN-id1" class="col-form-label">OIB</label>
+                      <input type="text" class="form-control" id="oib-id1" placeholder="Unesite isbn">
+                  </div>
+                  <div class="form-group">
+                      <label for="Broj-id1" class="col-form-label">Broj članske iskaznice</label>
+                      <input type="text" class="form-control" id="broj_clanske_iskaznice-id1" placeholder="Unesite broj stranica">
+                  </div>
+                  <div class="form-group">
+                    <label for="Broj-id1" class="col-form-label">Datum učlanjena</label>
+                    <input type="text" class="form-control" id="datum_uclanjenja-id1" placeholder="Unesite broj stranica">
+                </div>
+                <div class="form-group">
+                    <label for="Broj-id1" class="col-form-label">Datum prekida članstva</label>
+                    <input type="text" class="form-control" id="datum_isteka_clanstva-id1" placeholder="Unesite broj stranica">
+                </div>
+                  
+              </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <input type="submit" class="btn btn-primary" value="Anžuriraj" id="submitBtn-korisnik1">
+          </div>
+      </div>
+  </div>
+</div>
+
+<!--Bisnaje korisnika-->
+
+<div class="modal fade" id="ModalObrisi1" tabindex="-1" aria-labelledby="ModalObrisiLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content" id="modal-li21">
+        <div class="modal-header">
+            <h5 class="modal-title" id="ModalObrisiLabel"><b>Obriši</b></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <h2>Jeste li sigurni da želite obrisati <p id="ap1"></p></h2>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="za">Zatvori</button>
+          <input type="submit" class="btn btn-primary" value="Obriši" id="ObrisiKorisnika12">
+        </div>
+    </div>
+</div>
+</div>
+
+         
+
+  
+
+  <!--Ućitavanje-->
+    <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
+       
+
+
+    <script src="js/firebasec.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/preusmjeravanje.js"></script>
+    <script src="js/knjige.js"></script>
+    <script src="js/odjava.js"></script>
+    <script src="js/korisnici.js"></script>
+    
+  </body>
+</html>

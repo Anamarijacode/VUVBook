@@ -1,0 +1,418 @@
+#mPosudi
+{
+    height: 650px;
+    width: 500px;
+    background-color: rgb(191,101,51); 
+    background-image: url('p1.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;   
+    color: white; 
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+
+}
+#modal-li1, #modal-li2,#modal-li21, #modal-li, #mod
+{
+    background-color: rgb(191,101,51); 
+    background-image: url('p1.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;   
+    color: white; 
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+}
+
+#oib-dropdown, #oib-dropdown1
+{
+    height: inherit;
+    width: 470px;
+}
+#error-message, #nema-emaila, #nema-lozinke
+{
+    color:white;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: medium;
+}
+#email, #password
+{
+    width: 250px;
+    margin-left: -20px;
+}
+
+.dropdown-menu
+{
+    background-color: rgb(153, 79, 29);
+}
+.navbar-brand,.nav-link,.dropdown-item
+{
+    color:white;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+}
+.nav-link
+{
+    border-radius: 25px;
+    background-color: rgb(153, 79, 29) ;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.navbar-brand:hover,.nav-link:hover,.dropdown-item:hover,#btn1:hover,#btnl:hover,#btnDodaj:hover, #btn2:hover, #submiPosudi:hover,#submitBtn1:hover, #ObrisiKnjigu:hover, #zatvori:hover, #submitBtn-korisnik1:hover, #ObrisiKorisnika12:hover, #za:hover, #submitBtn:hover, #zap:hover, #zap1:hover, #submiPosudi:hover,.btn-posudi:hover, .btn-vrati:hover, .modal-content button:hover, #ObrisiKorisnika:hover, #prekinik:hover, #pk:hover, #pc:hover
+{
+    color:white;
+    background-color: rgb(105, 47, 16);
+    border: 0px;
+}
+
+#foot-custom
+{
+    background-image: url("AdobeStock_273578966.jpeg");
+    background-size: cover;
+    background-position: center;
+    color:white;
+    text-align: right;
+    padding: 10px;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    border-radius: 45px;
+   
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    background-image: url("Background.png");
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1; 
+}
+
+
+
+.modal-header,.modal-footer  {
+    
+    border-top: none; 
+    border-bottom: none;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.5); 
+    border: none; 
+    color: rgb(0, 0, 0); 
+    
+}
+
+
+
+
+
+#s {
+    text-align: center;
+}
+
+#inputs-container,#inputs-container1 {
+   
+    width: 1190px;
+    display: flex;
+    align-items: center;
+}
+
+#inputs,#inputs1 {
+    width: 1000px;
+    height: 50px;
+    border-radius: 50px;
+    border: 5px solid rgb(153, 79, 29);
+    outline: none;
+    background-color: transparent;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: larger;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    
+    
+}
+
+#btn1 , #btn2{
+    height: 50px;
+    width: 100px;
+    border-radius: 50px;
+    border: 5px solid rgb(153, 79, 29);
+    outline: none;
+    background-color: rgb(153, 79, 29);
+    color: white;
+    cursor: pointer;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: larger;
+    margin-left: -50px;
+}
+#submiPosudi, #submitBtn1, #ObrisiKnjigu, #zatvori, #submitBtn-korisnik1, #ObrisiKorisnika12, #za, #submitBtn, #zap, #zap1, #submiPosudi, .modal-content button,#ObrisiKorisnika, #prekinik, #pk, #pc
+{
+    border: 5px solid rgb(70, 31, 10);
+    outline: none;
+    background-color: rgb(70, 31, 10);
+    color: white;
+    cursor: pointer;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: larger;
+}
+.btn-posudi, .btn-vrati
+{
+    border: 5px solid rgb(193, 108, 52);
+    outline: none;
+    background-color: rgb(193, 108, 52);
+    color: white;
+    cursor: pointer;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+}
+#dropdownMenuButton:active,#dropdownMenuButton
+{
+    border: none;
+    outline: none;
+    background-color: rgb(153, 79, 29);
+    color: white;
+    cursor: pointer;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: larger;
+}
+
+#nav1,#nav-tab, #nav12
+{
+    background-color: transparent;
+    border-bottom: none;
+}
+#nav-profile-tab,#nav-home-tab,#nav-tab3-tab,#nav-tab4-tab
+{
+    border-radius: 0px;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-right: 1px;
+    margin-left: 0px;
+    width: 200px;
+    height: 35px;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    border-top-right-radius: 10px;
+    outline: none;
+    border: 5px solid;
+    border-color: rgb(153, 79, 29);
+    border-bottom: 0px;
+    border-top-left-radius: 10px;
+}
+#nav-home-tab1, #nav-profile-tab1, #nav-tab3-tab1, #nav-tab4-tab1
+{
+    border-radius: 0px;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-right: 1px;
+    margin-left: 0px;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    border-top-right-radius: 10px;
+    outline: none;
+    border: 5px solid;
+    border-color: rgb(153, 79, 29);
+    border-bottom: 0px;
+    border-top-left-radius: 10px;
+}
+
+#bookTable, #bookTable1,#korisnikTable, #bookTable123, #korisnikTable12, #bookTable456, #userTable789{
+    
+    width: 1600px;
+    margin-top: -3px;
+}
+#c1,#c2,#c3, #c21, #c22, #c23, #c24
+{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-home-tab, #nav-home-tab1{
+    margin-left: 50px;
+    margin-right: 2px;
+}
+#nav-profile-tab,#nav-home-tab,#nav-tab3-tab,#nav-tab4-tab,#nav-profile-tab1,#nav-home-tab1,#nav-tab3-tab1,#nav-tab4-tab1:active
+{
+    border-color: rgb(153, 79, 29);
+}
+#th1, #th2, #th123, #th234, #th456, #th789
+{
+    background-color: rgb(153, 79, 29);
+    color: white;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    margin:0px;
+    border-bottom: 5px solid rgb(153, 79, 29);
+    border-top: 5px solid rgb(153, 79, 29);
+}
+#bookTable tbody td,#bookTable1 tbody td,#korisnikTable tbody td,#bookTable123 tbody td, #korisnikTable12 tbody td, #bookTable456 tbody td, #userTable789 tbody td
+{
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 25px;
+    border-bottom: 2px solid rgb(153, 79, 29);
+    border-top:2px solid rgb(153, 79, 29);
+    background-color: white;
+}
+
+
+  #logo {
+    width: 700px;
+  height: 187px;
+  background-size: cover;
+  background-position: center;
+    background-image: url('Dizajn bez naslova (11).png') ;
+    margin-bottom: 15px;
+  }
+
+ #as1{
+    cursor: pointer;
+ }
+ #login {
+    margin-top: 100px;
+    width: 500px;
+    height: 550px;
+    align-items: center;
+    justify-content: center;    
+    border: 0,5px;
+    border-color:rgb(191,101,51);
+    background-color: rgb(191,101,51); 
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    color: white;
+    font-size: 25px;
+    border-radius: 15px;  
+    background-image: url('1.png');
+    background-repeat: no-repeat;
+}
+
+#btnl {
+    width: 100%; 
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom: 50px;  
+    border-radius: 50px;
+    border: 5px solid rgb(131, 68, 25);
+    background-color: rgb(153, 79, 29);
+    color: white;
+    cursor: pointer;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.text-center {
+    margin-top: 110px;
+}
+#email,#password
+{
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    color: black;
+    font-size: 20px;
+}
+#as2
+{
+    margin: 0;
+}
+
+
+#btnDodaj
+{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    border: none;
+    outline: none;
+    background-color:transparent;
+    color: white;
+    cursor: pointer;
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: larger;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+
+
+
+#dostupnost-id
+{
+    width: 20px;
+    height: 20px;    
+}
+#image
+{
+    max-width: 250px; 
+    max-height: 250px;
+}
+#th23
+{
+ display: none;   
+}
+
+#sve-knjige, #svi-korisnici {
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 15px;
+    color: #ffffff; 
+    background-color: rgb(207, 112, 49); 
+}
+#h1, #h2, #h21
+{
+    font-family: 'Ephesis', cursive;
+    font-family: 'Exo 2', sans-serif;
+    color: rgb(61, 31, 11);
+    font-style: bold;
+
+}
+
+#sve-knjige .card , #svi-korisnici .card{
+    border-radius: 15px;  
+    background-image: url('p1.png');
+    border-color:rgb(191,101,51);
+    background-color: rgb(191,101,51); 
+}
+#povijest
+{
+    border-radius: 15px;  
+    border-color:rgb(191,101,51);
+    background-color: rgb(191,101,51); 
+}
+
+#sve-knjige p , #svi-korisnici p{
+    color: #ffffff; 
+}
+
+#sve-knjige button , #svi-korisnici button{
+    background-color:  rgb(104, 57, 26); 
+    color: #ffffff; 
+}
+
+#sve-knjige button:hover , #svi-korisnici button:hover{
+    background-color: #593f20; 
+}
+#jedan,#dva
+{
+    width: 100px;
+    height: inherit;
+}
